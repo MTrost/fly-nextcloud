@@ -1,4 +1,6 @@
+app_name = "%fly_app_name%"
 app = "%fly_app_name%"
+
 
 kill_signal = "SIGINT"
 kill_timeout = 5
