@@ -61,7 +61,7 @@ jobs:
           # Check if the Redis app has already been deployed
           if [ -z "$(flyctl apps list | grep '${{ env.fly_app_name }}-redis')" ]; then
               # Create the redis app
-              flyctllaunch --name ${{ env.fly_app_name }}-redis \
+              flyctl launch --name ${{ env.fly_app_name }}-redis \
                          --no-deploy \
                          --org ${{ env.fly_org }} \
                          --region ${{ env.fly_app_region }}
