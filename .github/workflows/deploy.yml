@@ -67,7 +67,7 @@ jobs:
                          --region ${{ env.fly_app_region }}
 
               # Create volume for redis app
-              flyctlvolumes create redis_data \
+              flyctl volumes create redis_data \
                  --size 1 \
                  --region ${{ env.fly_app_region }} \
                  --app ${{ env.fly_app_name }}-redis
@@ -85,7 +85,7 @@ jobs:
           sed -i "s/%fly_redis_password%/${{ env.fly_redis_password }}/g" fly.toml
 
           # Deploy Redis
-          flyctldeploy
+          flyctl deploy
 
           # Leave Redis config
           cd ..
